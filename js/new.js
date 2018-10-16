@@ -1,0 +1,18 @@
+<script>
+    $('#newProduct_form').submit(function() {
+        $.post('/library/controllers/new.php',
+            {
+                image: $('#pimage').val(),
+                author: $('#pauthor').val(),
+                title: $('#ptitle').val(),
+                category: $('#pcategory').val(),
+                count: $('#pcount').val(), 
+                description: $('#pdescription').val()                
+            },
+            function(data) {
+                $("#main").html(data);
+            }
+        );
+        return false;
+    });
+</script>
